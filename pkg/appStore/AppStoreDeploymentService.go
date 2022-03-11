@@ -859,7 +859,7 @@ func (impl *InstalledAppServiceImpl) Subscribe() error {
 func (impl *InstalledAppServiceImpl) DeployDefaultChartOnCluster(bean *cluster2.ClusterBean, userId int32) (bool, error) {
 	// STEP 1 - create environment with name "devton"
 	impl.logger.Infow("STEP 1", "create environment for cluster component", bean)
-	envName := fmt.Sprintf("%s-%s", bean.ClusterName, DEFAULT_ENVIRONMENT_OR_NAMESPACE_OR_PROJECT)
+	envName := fmt.Sprintf("%s-%s", "default", DEFAULT_ENVIRONMENT_OR_NAMESPACE_OR_PROJECT)
 	env, err := impl.envService.FindOne(envName)
 	if err != nil && err != pg.ErrNoRows {
 		return false, err
