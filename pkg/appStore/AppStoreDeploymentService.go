@@ -944,7 +944,7 @@ func (impl *InstalledAppServiceImpl) DeployDefaultChartOnCluster(bean *cluster2.
 					return false, err
 				}
 				chartGroupInstallChartRequest := &appStoreBean.ChartGroupInstallChartRequest{
-					AppName:                 fmt.Sprintf("%d-%d-%s", bean.Id, env.Id, item.Name),
+					AppName:                 fmt.Sprintf("d-%d-%d-%s", bean.Id, env.Id, item.Name),
 					EnvironmentId:           env.Id,
 					ValuesOverrideYaml:      item.Values,
 					AppStoreVersion:         appStore.AppStoreApplicationVersionId,
